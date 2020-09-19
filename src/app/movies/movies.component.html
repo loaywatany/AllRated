@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center mt-2">Movies TOP 15</h2>
+        </div>
+    </div>
+    <div class="row my-5">
+        <div *ngFor="let movie of trendingMovies" class="col-md-4 mb-5">
+            <div class="card" style="width: 18rem;">
+                <img [src]="imgPrefix+movie.poster_path" class="card-img-top" alt="">
+                <div class="card-body">
+                  <p class="card-text">{{movie.overview | slice:0:70}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{movie.vote_average}} &#9733;</li>
+                    <li class="list-group-item">{{movie.vote_count}} votes</li>
+                  </ul>
+              </div>
+        </div>
+    </div>
+</div>
