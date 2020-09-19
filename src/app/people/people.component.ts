@@ -9,7 +9,7 @@ import { PeopleService } from '../people.service';
 export class PeopleComponent implements OnInit {
 
   peopleTrending:[];
-  imgPrefix:string = '';
+  imgPrefix:string = 'https://image.tmdb.org/t/p/w500';
 
   constructor(_peopleService:PeopleService) { 
     _peopleService.getPeopleTrending().subscribe((data)=>{
