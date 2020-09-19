@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PeopleService } from '../people.service';
 
 @Component({
   selector: 'app-people',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeopleComponent implements OnInit {
 
-  constructor() { }
+  peopleTrending:[];
+  imgPrefix:string = '';
+
+  constructor(_peopleService:PeopleService) { 
+    _peopleService.getPeopleTrending().subscribe((data)=>{
+      this.peopleTrending = data.results;
+    })
+   }
 
   ngOnInit() {
   }
