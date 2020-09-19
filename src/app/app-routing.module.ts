@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MoviesComponent } from './movies/movies.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { PeopleComponent } from './people/people.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TvComponent } from './tv/tv.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'tv', component: TvComponent},
   {path: 'people', component: PeopleComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegistrationComponent}
+  {path: 'register', component: RegistrationComponent},
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
