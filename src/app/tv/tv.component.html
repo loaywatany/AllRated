@@ -1,12 +1,21 @@
 <div class="container">
     <div class="row">
+        <div class="col-12">
+            <h2 class="text-center mt-2">TV Shows TOP 20</h2>
+        </div>
+    </div>
+    <div class="row">
         <div *ngFor="let tv of tvTrending" class="col-md-4 mt-5">
             <div class="card" style="width: 18rem;">
                 <img [src]="imgPrefix+tv.poster_path" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{tv.original_name}}</h5>
-                  <p class="card-text"> Episode Count</p>
+                  <p class="card-text">{{tv.overview | slice:0:70}}</p>
                 </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{tv.vote_average}} &#9733;</li>
+                    <li class="list-group-item">{{tv.vote_count}} Votes</li>
+                  </ul>
               </div>
         </div>
     </div>
