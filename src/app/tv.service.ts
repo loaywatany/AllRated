@@ -12,6 +12,6 @@ export class TvService {
   }
 
   getTvTrending():Observable<any>{
-    return this._HttpClient.get('https://api.themoviedb.org/3/tv/550?api_key=a36430254248c3191bffc6400ec3f1e3');
+    return this._HttpClient.get('https://api.themoviedb.org/3/tv/popular?api_key=a36430254248c3191bffc6400ec3f1e3&language=en-US&page=1');
   }
 }
