@@ -2,10 +2,10 @@
     <div class="row justify-content-center">
                         <div class="col-md-8">
                             <div class="card">
-                                <div class="card-header bg-dark text-white">Register</div>
+                                <div class="card-header bg-dark text-white text-center">Registration</div>
                                 <div class="card-body">
     
-                                    <form class="form-horizontal" method="post" action="#">
+                                    <form [formGroup]="registerForm" class="form-horizontal" (ngSubmit)="getRegisterInfo(registerForm)">
     
                                         <div class="form-group">
                                             <span class="input-group-addon mr-2"><i class="fa fa-user fa" aria-hidden="true"></i></span>
@@ -14,8 +14,9 @@
                                             <div class="cols-sm-10">
                                                 <div class="input-group">
                                                     
-                                                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name" />
+                                                    <input [class.is-valid]="registerForm.get('first_name').errors == null && registerForm.get('first_name').touched" formControlName="first_name" type="text" class="form-control" name="name" id="name" placeholder="First Name" />
                                                 </div>
+                                                <p *ngIf="registerForm.get('first_name').errors != null && registerForm.get('first_name').touched"  class="text-danger">First name Invalid</p>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -25,36 +26,37 @@
                                             <div class="cols-sm-10">
                                                 <div class="input-group">
                                                     
-                                                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name" />
+                                                    <input [class.is-valid]="registerForm.get('last_name').errors == null && registerForm.get('last_name').touched" formControlName="last_name" type="text" class="form-control" name="name" id="name" placeholder="First Name" />
                                                 </div>
+                                                <p *ngIf="registerForm.get('last_name').errors != null && registerForm.get('last_name').touched"  class="text-danger">Last name Invalid</p>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <span class="input-group-addon mr-2"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                            <label for="email" class="cols-sm-2 control-label">Email</label>
+                                            <span class="input-group-addon mr-2"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                            <label for="name" class="cols-sm-2 control-label">email</label>
+
                                             <div class="cols-sm-10">
                                                 <div class="input-group">
                                                     
-                                                    <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
+                                                    <input [class.is-valid]="registerForm.get('email').errors == null && registerForm.get('email').touched" formControlName="email" type="email" class="form-control" name="email" id="name" placeholder="email" />
                                                 </div>
+                                                <p *ngIf="registerForm.get('email').errors != null && registerForm.get('email').touched"  class="text-danger">email Invalid</p>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <span class="input-group-addon mr-2"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                            <label for="password" class="cols-sm-2 control-label">Password</label> 
-                                            
+                                            <span class="input-group-addon mr-2"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                            <label for="name" class="cols-sm-2 control-label">password</label>
+
                                             <div class="cols-sm-10">
                                                 <div class="input-group">
                                                     
-                                                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
+                                                    <input [class.is-valid]="registerForm.get('password').errors == null && registerForm.get('password').touched" formControlName="password" type="password" class="form-control" name="password" id="name" placeholder="password" />
                                                 </div>
+                                                <p *ngIf="registerForm.get('password').errors != null && registerForm.get('password').touched"  class="text-danger">password Invalid</p>
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
-                                        </div>
-                                        <div class="login-register">
-                                            <a routerLink="">Login</a>
+                                            <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
                                         </div>
                                     </form>
                                 </div>
