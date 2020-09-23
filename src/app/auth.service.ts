@@ -12,4 +12,7 @@ export class AuthService {
   register(registerFormValue):Observable<any> {
     return this._HttpClient.post('https://routeegypt.herokuapp.com/signup', registerFormValue);
   }
+  login(loginFormValue):Observable<any> {
+    return this._HttpClient.post('https://routeegypt.herokuapp.com/signin', loginFormValue);
+  }
 }

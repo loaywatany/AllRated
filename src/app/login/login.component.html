@@ -1,14 +1,19 @@
 <div class="wrapper fadeInDown mt-5">
     <div id="formContent">
 
-      <form>
-        <div class="form-group">
-          <input type="text" id="login" class="fadeIn second form-control" name="login" placeholder="login">
+      <form [formGroup]="loginForm" (ngSubmit)="getLoginInfo(loginForm)">
+        <div *ngIf="flag" class="alert alert-danger">
+          {{ errorMessage }}
         </div>
         <div class="form-group">
-          <input type="text" id="password" class="fadeIn third form-control" name="login" placeholder="password">
+          <input  formControlName="email" type="text" id="login" class="fadeIn second form-control" name="login" placeholder="Email">
+          <p *ngIf="loginForm.get('email').errors !=null && loginForm.get('email').touched" class="text-danger">Invalid Email</p>
         </div>
-        <input type="submit" class="fadeIn fourth" value="Log In">
+        <div class="form-group">
+          <input formControlName="password" type="text" id="password" class="fadeIn third form-control" name="password" placeholder="password">
+        </div>
+        <input [disabled]="loginForm.invalid" type="submit" class="fadeIn fourth" value="Log In">
+
       </form>
   
   

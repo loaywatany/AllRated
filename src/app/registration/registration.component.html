@@ -54,7 +54,7 @@
                                                     
                                                     <input [class.is-valid]="registerForm.get('password').errors == null && registerForm.get('password').touched" formControlName="password" type="password" class="form-control" name="password" id="name" placeholder="password" />
                                                 </div>
-                                                <p *ngIf="registerForm.get('password').errors != null && registerForm.get('password').touched"  class="text-danger">password Invalid</p>
+                                                <p *ngIf="registerForm.get('password').errors != null && registerForm.get('password').touched"  class="text-danger">password Invalid, Make sure first letter is Capitalized!</p>
                                             </div>
                                         </div>
                                         <div class="form-group ">
