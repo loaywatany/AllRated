@@ -19,8 +19,10 @@ export class LoginComponent implements OnInit {
   getLoginInfo(loginForm) {
     this._AuthService.login(loginForm.value).subscribe((res)=>{
       if (res.message == 'success'){
+        this._AuthService.saveCurrentUser(res.user.first_name, res.user.last_name, res.user.email, res.token);
         this._Router.navigate(['/movies']);
-      } else {
+      }
+      else {
         this.flag = true;
         this.errorMessage = res.message;
       }
