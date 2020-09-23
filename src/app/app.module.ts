@@ -12,7 +12,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,11 @@ import { FooterComponent } from './footer/footer.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
