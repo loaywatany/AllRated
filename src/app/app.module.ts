@@ -13,7 +13,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms'
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { GetTrendingInfoComponent } from './get-trending-info/get-trending-info.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'
     NotFoundComponent,
     NavbarComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    GetTrendingInfoComponent
   ],
   imports: [
     BrowserModule,

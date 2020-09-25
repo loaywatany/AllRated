@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import { GetTrendingInfoComponent } from './get-trending-info/get-trending-info.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MoviesComponent } from './movies/movies.component';
@@ -18,11 +19,12 @@ const routes: Routes = [
   {path: 'people',canActivate:[AuthGuard] , component: PeopleComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegistrationComponent},
+  {path: 'trending-info/:item/:id', component: GetTrendingInfoComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)], //{useHash:true}
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

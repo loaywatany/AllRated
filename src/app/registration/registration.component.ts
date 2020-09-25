@@ -26,9 +26,12 @@ export class RegistrationComponent implements OnInit {
 
     if(registerForm.valid == true) {
       this._AuthService.register(registerForm.value).subscribe((res)=>{
-        if (res.message == 'success') {
+        if (res.message == 'success')
+        {
           this._Router.navigate(['/login'])
-        } else {
+        }
+        else
+        {
           this.flag = true;
           console.log(res);
         }

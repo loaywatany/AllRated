@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mt-5">
+            <img class="img-fluid" [src]="imgPrefix+itemsDetails?.poster_path" alt="">
+        </div>
+        <div class="col-md-8 mt-5">
+            <h2>{{itemsDetails?.title}}{{itemsDetails?.name}}</h2>
+            <p class="second-level">{{itemsDetails?.tagline}}</p>
+            <p class="text-muted lead pt-3 pb-2">{{itemsDetails?.overview}}</p>
+            <div class="row">
+                <div class="col-md-3">
+                    <p class="text-center rounded bg-dark p-2 text-white">Language - {{itemsDetails?.original_language.toUpperCase()}}</p>
+                </div>
+                <div class="col">
+                    <p *ngFor="let genre of itemsDetails?.genres" class="text-center rounded bg-info p-2 text-white d-inline-block mx-2 ">
+                        {{genre.name}}
+                    </p>
+                </div>
+            </div>
+            <p class="text-center rounded bg-dark p-2 text-white">Release Date - {{itemsDetails?.release_date}}{{itemsDetails?.first_air_date}}</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="rounded bg-info text-white p-2 text-center">{{itemsDetails?.vote_average}} <span class="text-warning">&#9733;</span>  </p>
+                </div>
+                <div class="col-md-6">
+                    <p class="rounded bg-info text-white p-2 text-center">{{itemsDetails?.vote_count}} Votes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
