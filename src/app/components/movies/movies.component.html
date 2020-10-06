@@ -9,7 +9,7 @@
             <div class="card" >
                 <img [src]="imgPrefix+movie.poster_path" class="card-img-top" alt="">
                 <div class="card-body">
-                  <p class="card-text">{{movie.overview | slice:0:70}} ... <button  [routerLink]="['/trending-info', movie.media_type, movie.id]"  class="btn btn-primary">Read More</button></p>
+                  <p class="card-text">{{movie.overview | slice:0:70}} ... <button  [routerLink]="['/trending-info', movie.media_type, movie.id]"  class="btn btn-primary read-more">Read More</button></p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">{{movie.vote_average}} <span class="text-warning">&#9733;</span> </li>
