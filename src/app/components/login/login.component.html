@@ -12,7 +12,7 @@
         <div class="form-group">
           <input formControlName="password" type="text" id="password" class="fadeIn third form-control" name="password" placeholder="password">
         </div>
-        <input [disabled]="loginForm.invalid" type="submit" class="fadeIn fourth" value="Log In">
+        <input (click)="loading()" [disabled]="loginForm.invalid" type="submit" class="fadeIn fourth" value="Log In">
         <p *ngIf="loginLoading">Loading ...</p>
 
       </form>
