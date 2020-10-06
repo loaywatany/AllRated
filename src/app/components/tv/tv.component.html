@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div *ngFor="let tv of tvTrending" class="col-md-4 mt-5">
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                 <img [src]="imgPrefix+tv.poster_path" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{tv.original_name}}</h5>
