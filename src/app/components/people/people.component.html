@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div *ngFor="let people of peopleTrending" class="col-md-4 mt-5">
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                 <img [src]="imgPrefix+people.profile_path" class="card-img-top">
                 <div class="card-body">
                   <h5 class="card-title">{{people.name}}</h5>
