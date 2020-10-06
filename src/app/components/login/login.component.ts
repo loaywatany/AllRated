@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm:FormGroup;
   errorMessage:string;
   flag:boolean = false;
+  loginLoading:boolean = false;
 
   constructor(private _AuthService:AuthService, private _Router:Router) { }
 
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
     this._AuthService.login(loginForm.value).subscribe((res)=>{
       if (res.message == 'success'){
         this._AuthService.saveCurrentUser(res.user.first_name, res.user.last_name, res.user.email, res.token);
+        this.loginLoading = true;
         this._Router.navigate(['/movies']);
       }
       else {
