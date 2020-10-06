@@ -5,8 +5,8 @@
         </div>
     </div>
     <div class="row my-5">
-        <div *ngFor="let movie of trendingMovies" class="col-md-4 mb-5 movie_item">
-            <div class="card" style="width: 18rem;">
+        <div *ngFor="let movie of trendingMovies" class="col-md-4 mb-5 movie_item" [routerLink]="['/trending-info', movie.media_type, movie.id]">
+            <div class="card" >
                 <img [src]="imgPrefix+movie.poster_path" class="card-img-top" alt="">
                 <div class="card-body">
                   <p class="card-text">{{movie.overview | slice:0:70}} ... <button  [routerLink]="['/trending-info', movie.media_type, movie.id]"  class="btn btn-primary">Read More</button></p>
