@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { MoviesService } from '../movies.service';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-get-trending-info',

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth.guard';
-import { GetTrendingInfoComponent } from './get-trending-info/get-trending-info.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { MoviesComponent } from './movies/movies.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { PeopleComponent } from './people/people.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { TvComponent } from './tv/tv.component';
+import { GetTrendingInfoComponent } from './components/get-trending-info/get-trending-info.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { MoviesComponent } from './components/movies/movies.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { PeopleComponent } from './components/people/people.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { TvComponent } from './components/tv/tv.component';
 
 
 const routes: Routes = [
@@ -24,7 +24,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)], //{useHash:true}
+  imports: [RouterModule.forRoot(routes, {useHash:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
